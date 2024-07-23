@@ -1,13 +1,24 @@
 .pdf-uploader {
-    max-width: 600px;
+    display: flex;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     font-family: Arial, sans-serif;
   }
   
-  .file-input-container {
-    display: flex;
-    justify-content: space-between;
+  .past-requests-section {
+    width: 300px;
+    padding-right: 20px;
+    border-right: 1px solid #ddd;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding-left: 20px;
+  }
+  
+  .file-upload-section,
+  .string-input-section {
     margin-bottom: 20px;
   }
   
@@ -24,6 +35,7 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-right: 10px;
   }
   
   .button:hover {
@@ -38,37 +50,40 @@
     background-color: #007aa3;
   }
   
-  .response-container {
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 15px;
-    margin-top: 20px;
-  }
-  
-  .response-container h3 {
-    margin-top: 0;
-    color: #333;
+  .file-name {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
   }
   
   .response-message {
-    color: #4CAF50;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
   }
   
-  .past-responses {
-    margin-top: 30px;
+  .string-input {
+    width: calc(100% - 120px);
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
   }
   
-  .past-responses h3 {
+  .past-requests-section h3 {
     color: #333;
   }
   
-  .past-responses ul {
+  .past-requests-section ul {
     list-style-type: none;
     padding: 0;
+    max-height: 500px;
+    overflow-y: auto;
   }
   
-  .past-responses li {
+  .past-requests-section li {
     background-color: #f1f1f1;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -76,8 +91,21 @@
     margin-bottom: 10px;
   }
   
-  .file-name {
-    margin-left: 10px;
-    font-style: italic;
-    color: #666;
+  @media (max-width: 768px) {
+    .pdf-uploader {
+      flex-direction: column;
+    }
+  
+    .past-requests-section {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #ddd;
+      padding-right: 0;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+  
+    .main-content {
+      padding-left: 0;
+    }
   }

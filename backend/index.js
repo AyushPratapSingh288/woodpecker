@@ -12,6 +12,7 @@ const api_secret =
   "85yu63qrh62adkagdnjw67mqnqfqv92yfnkqrpvmexuxmzwnwpva5zy57xx8ynmc";
 const serverClient = StreamChat.getInstance(api_key, api_secret);
 
+
 app.post("/signup", async (req, res) => {
   try {
     const { firstName, lastName, username, password } = req.body;

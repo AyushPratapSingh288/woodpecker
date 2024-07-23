@@ -7,4 +7,4 @@ const UserDB = new mongoose.Schema({
 })
 
 const Usermodel = mongoose.model("userData" , UserDB)
-module.exports = EmployeeModel
+module.exports = Usermodel
